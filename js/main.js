@@ -62,6 +62,7 @@ $('#nav').affix({
   	// Portfolio isotope filter
     $(window).load(function() {
         $('body').addClass('load');
+        
         var $container = $('.portfolio-items');
         $container.isotope({
             filter: '*',
@@ -93,9 +94,16 @@ $('#nav').affix({
 
 
 	$(document).ready(function( $ ) {
+    if(!/mobile/gi.test(window.navigator.userAgent)){
+        var videoBgStr = '<video id="intro-video" class="video" muted="" loop="" autoplay="">'+
+        '<source src="http://7xljz9.com1.z0.glb.clouddn.com/demo-min.mp4" type="video/mp4">'+
+      '</video>';
+    }
+    $(videoBgStr).appendTo('.intro');
+    $('.overwatch-warp').fadeOut();
     var b=["\n %c %c %c 赞鱼鱼  - ✰  ✰  %c  %c  http://www.zanyuyu.com/  %c %c ♥%c♥%c♥ \n\n","background: #ff66a5; padding:5px 0;","background: #ff66a5; padding:5px 0;","color: #ff66a5; background: #030307; padding:5px 0;","background: #ff66a5; padding:5px 0;","background: #ffc3dc; padding:5px 0;","background: #ff66a5; padding:5px 0;","color: #ff2424; background: #fff; padding:5px 0;","color: #ff2424; background: #fff; padding:5px 0;","color: #ff2424; background: #fff; padding:5px 0;"];
     window.console.log.apply(console,b);
-    $('.overwatch-warp').fadeOut();
+    
 		if($("span.count").length > 0){	
 			$('span.count').counterUp({
 					delay: 10, // the delay time in ms
